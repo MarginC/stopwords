@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cat file_list/* | sort | uniq | tr -d " \t\r" | sed '/^\s*$/d' > stop_words.txt
+cat file_list/* | sort | uniq | tr -d " \t\r" | sed '/^\s*$/d' | grep -v -f filter.txt > stop_words.txt
